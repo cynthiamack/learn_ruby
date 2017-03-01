@@ -38,6 +38,11 @@ describe "Timer" do
       @timer.seconds = 4000
       expect(@timer.time_string).to eq("01:06:40")
     end
+
+    it "should display 3601 seconds as 01:00:01" do
+      @timer.seconds = 3601
+      expect(@timer.time_string).to eq("01:00:01")
+    end
   end
 
 
@@ -45,16 +50,16 @@ describe "Timer" do
   # Uncomment these specs if you want to test-drive that
   # method, then call that method from inside of time_string.
   #
-  # describe 'padded' do
-  #   it 'pads zero' do
-  #     expect(@timer.padded(0)).to eq('00')
-  #   end
-  #   it 'pads one' do
-  #     expect(@timer.padded(1)).to eq('01')
-  #   end
-  #   it "doesn't pad a two-digit number" do
-  #     expect(@timer.padded(12)).to eq('12')
-  #   end
-  # end
+   describe 'padded' do
+     it 'pads zero' do
+       expect(@timer.padded(0)).to eq('00')
+     end
+     it 'pads one' do
+       expect(@timer.padded(1)).to eq('01')
+     end
+     it "doesn't pad a two-digit number" do
+       expect(@timer.padded(12)).to eq('12')
+     end
+   end
 
 end
